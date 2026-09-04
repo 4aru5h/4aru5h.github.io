@@ -14,7 +14,7 @@
   <link rel="canonical" href="https://4aru5h.in">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;701;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     /* ============================================================
@@ -1686,6 +1686,15 @@
     }
     ::-webkit-scrollbar-thumb:hover { background: var(--border-active); }
   </style>
+
+<style id="moving-bg-lines">
+body::before, body::after { content:""; position:fixed; inset:0; pointer-events:none; z-index:0; }
+body::before { opacity:.18; background: repeating-linear-gradient(135deg, transparent 0 84px, rgba(56,189,248,.10) 85px, transparent 86px 168px); animation:bg-lines 18s linear infinite; }
+body::after { opacity:.10; background: repeating-linear-gradient(135deg, transparent 0 118px, rgba(129,140,248,.08) 119px, transparent 120px 238px); animation:bg-lines-rev 26s linear infinite; }
+@keyframes bg-lines { from{transform:translate3d(-120px,0,0)} to{transform:translate3d(120px,0,0)} }
+@keyframes bg-lines-rev { from{transform:translate3d(120px,0,0)} to{transform:translate3d(-120px,0,0)} }
+body > *:not(#intro-overlay) { position:relative; z-index:1; }
+</style>
 </head>
 
 <body>
@@ -1893,7 +1902,7 @@
               <span class="skill-item">Git</span>
               <span class="skill-item">Bash CLI</span>
               <span class="skill-item">MS Excel</span>
-            </div>
+            <span class="skill-item">Burp Suite</span></div>
           </div>
 
           <!-- Category 2: Languages & Web -->
